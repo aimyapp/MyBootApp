@@ -11,44 +11,44 @@ h1 {
 }
 
 body {
-	font-size: 13px;
+	font-size: 13pt;
 	color: gray;
 	margin: 5px 25px;
 }
 
-pre {
-	font-size: 13pt;
-	color: gray;
-	padding: 5px 10px;
-	border: 1px solid gray:
+tr {
+	margin: 5px;
+}
+
+th {
+	padding: 5px;
+	color: white;
+	background: darkgray;
+}
+
+td {
+	padding: 5px;
+	color: black;
+	background: #F8F8FF;
 }
 </style>
 </head>
 <body>
-	<h1>Helo page</h1>
-	<pre th:text="${msg}">this is Thymeleaf sample page.</pre>
-	<form method="post" action="/">
-		<div>
-			<input type="checkbox" id="check1" name="check1" /> <label
-				for="check1">チェック</label>
-		</div>
-		<div>
-			<input type="radio" id="radioA" name="radio1" value="male" /> <label
-				for="radioA">男性</label>
-		</div>
-		<div>
-			<input type="radio" id="radioB" name="radio1" value="female" /> <label
-				for="radioB">女性</label>
-		</div>
-		<div>
-			<select id="select2" name="select2" size="4" multiple="multiple">
-				<option value="Android">Android</option>
-				<option value="iphone">iPhone</option>
-				<option value="Winfone">Windows Phone</option>
-			</select>
-		</div>
-		<input type="submit" value="Click" />
-	</form>
-
+	<h1 th:text="#{content.title}">Helo page</h1>
+	<p th:text="${msg}">Helo page</p>
+	<table th:object="${object}">
+		<tr>
+			<th>ID</th>
+			<td th:text="*{id}"></td>
+		</tr>
+		<tr>
+			<th>NAME</th>
+			<td th:text="*{name}"></td>
+		</tr>
+		<tr>
+			<th>MAIL</th>
+			<td th:text="*{value}"></td>
+		</tr>
+	</table>
 </body>
 </html>
