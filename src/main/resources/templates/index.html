@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <title>top page</title>
@@ -15,40 +15,13 @@ body {
 	color: gray;
 	margin: 5px 25px;
 }
-
-tr {
-	margin: 5px;
-}
-
-th {
-	padding: 5px;
-	color: white;
-	background: darkgray;
-}
-
-td {
-	padding: 5px;
-	color: black;
-	background: #F8F8FF;
-}
 </style>
+<style th:include="part :: frag_style"></style>
 </head>
 <body>
 	<h1 th:text="#{content.title}">Helo page</h1>
-	<p th:text="${msg}">Helo page</p>
-	<table th:object="${object}">
-		<tr>
-			<th>ID</th>
-			<td th:text="*{id}"></td>
-		</tr>
-		<tr>
-			<th>NAME</th>
-			<td th:text="*{name}"></td>
-		</tr>
-		<tr>
-			<th>MAIL</th>
-			<td th:text="*{value}"></td>
-		</tr>
-	</table>
+	<div th:include="part :: frag_body">
+		<p>this is orginal content.</p>
+	</div>
 </body>
 </html>
